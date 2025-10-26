@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidado e Enfermagem: Desafios e Práticas</title>
+    <!-- Carregando o Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carregando a fonte Inter (profissional) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Aplicando a fonte profissional no corpo do site */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #111827; /* bg-gray-900 */
+        }
+        
+        /* Estilos para o Acordeão (FAQ) */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-button.open .accordion-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Linha do tempo */
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem; /* 40px */
+            padding-bottom: 2rem; /* 32px */
+            border-left: 2px solid #4B5563; /* border-gray-600 */
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -0.5625rem; /* -9px */
+            top: 0.25rem; /* 4px */
+            width: 1.125rem; /* 18px */
+            height: 1.125rem; /* 18px */
+            border-radius: 9999px; /* rounded-full */
+            background-color: #DC2626; /* bg-red-600 */
+            border: 2px solid #1F2937; /* border-gray-800 */
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+        }
+    </style>
+</head>
+<body class="text-gray-300 min-h-screen">
+
+    <!-- Cabeçalho / Título do Site -->
+    <header class="bg-black shadow-lg p-5 sticky top-0 z-20 border-b border-gray-700">
+        <div class="container mx-auto flex flex-wrap justify-between items-center">
+            <h1 class="text-2xl font-bold text-white mb-2 sm:mb-0">
+                <span class="text-red-600">Saberes</span> em Conexão
+            </h1>
+            <nav class="flex flex-wrap space-x-4 sm:space-x-6">
+                <a href="#sobre" class="text-gray-400 hover:text-red-600 transition-colors">Sobre</a>
+                <a href="#desafios" class="text-gray-400 hover:text-red-600 transition-colors">Desafios</a>
+                <a href="#humanizacao" class="text-gray-400 hover:text-red-600 transition-colors">Humanização</a>
+                <a href="#politicas" class="text-gray-400 hover:text-red-600 transition-colors">Rede de Apoio</a>
+                <a href="#faq" class="text-gray-400 hover:text-red-600 transition-colors">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mx-auto p-4 sm:p-8 space-y-16">
+
+        <!-- Seção 1: Hero -->
+        <section class="text-center p-8 sm:p-12 bg-gray-800 rounded-xl shadow-2xl relative overflow-hidden">
+            <h2 class="text-4xl sm:text-5xl font-black text-white mb-4 relative z-10">
+                Desafios da Enfermagem no Cuidado às CRIANES
+            </h2>
+            <p class="text-lg sm:text-xl text-gray-300 relative z-10 max-w-3xl mx-auto">
+                Uma análise sobre os desafios da enfermagem e a importância do cuidado humanizado no ambiente hospitalar e domiciliar.
+            </p>
+            <div class="absolute -bottom-1/2 -left-1/4 w-full h-full bg-red-600/10 rounded-full blur-3xl -z-0"></div>
+            <div class="absolute -top-1/2 -right-1/4 w-full h-full bg-red-600/10 rounded-full blur-3xl -z-0"></div>
+        </section>
+
+        <!-- Seção 2: O que são CRIANES? (Expandido) -->
+        <section id="sobre" class="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg">
+            <h3 class="flex items-center text-3xl font-bold text-white mb-5">
+                O que são <span class="text-red-600 ml-2">CRIANES?</span>
+            </h3>
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                O termo <strong>CRIANES</strong> (Crianças com Necessidades Especiais de Saúde) define crianças que apresentam demandas de cuidado contínuas, sejam elas físicas, de desenvolvimento, comportamentais ou emocionais. Essas necessidades exigem um planejamento de saúde individualizado.
+            </p>
+            <h4 class="text-2xl font-bold text-white mb-4">Classificação das Demandas de Cuidado:</h4>
+            <p class="text-gray-400 mb-6">Conforme identificado no estudo, as necessidades dessas crianças são classificadas em grupos distintos:</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gray-700/50 p-4 rounded-lg">
+                    <h5 class="font-bold text-lg text-red-500">1. Tecnológicas</h5>
+                    <p class="text-gray-300">Dependentes de dispositivos para a manutenção da vida, como ventiladores mecânicos, sondas para alimentação ou cateteres.</p>
+                </div>
+                <div class="bg-gray-700/50 p-4 rounded-lg">
+                    <h5 class="font-bold text-lg text-red-500">2. Medicamentosas</h5>
+                    <p class="text-gray-300">Necessidade de uso contínuo de fármacos para tratar condições crônicas de saúde.</p>
+                </div>
+                <div class="bg-gray-700/50 p-4 rounded-lg">
+                    <h5 class="font-bold text-lg text-red-500">3. Desenvolvimento</h5>
+                    <p class="text-gray-300">Apresentam atraso no processo que afeta a cognição, o físico, o emocional ou o social, exigindo terapias contínuas.</p>
+                </div>
+                <div class="bg-gray-700/50 p-4 rounded-lg">
+                    <h5 class="font-bold text-lg text-red-500">4. Habituais Modificados</h5>
+                    <p class="text-gray-300">Exigem cuidados específicos e ajustados para atividades diárias, como alimentação especial, higiene ou mobilidade.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Desafios no Cuidado -->
+        <section id="desafios" class="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg">
+            <h3 class="flex items-center text-3xl font-bold text-white mb-5">
+                <span class="text-red-600 mr-3">Principais</span> Desafios Identificados
+            </h3>
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                O estudo revela que o cuidado é complexo e apresenta obstáculos significativos em diferentes esferas:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card Desafio 1 -->
+                <div class="bg-gray-900 border border-gray-700 p-5 rounded-lg shadow-md transition-all duration-300 hover:border-red-600">
+                    <h4 class="font-bold text-xl text-red-600 mb-2">Ambiente Domiciliar</h4>
+                    <p class="text-gray-400">As famílias enfrentam sobrecarga, falta de orientação técnica para manusear equipamentos (como destacado por Neves et al., 2013) e dificuldades com higiene e nutrição adequadas.</p>
+                </div>
+                <!-- Card Desafio 2 -->
+                <div class="bg-gray-900 border border-gray-700 p-5 rounded-lg shadow-md transition-all duration-300 hover:border-red-600">
+                    <h4 class="font-bold text-xl text-red-600 mb-2">Ambiente Hospitalar</h4>
+                    <p class="text-gray-400">O desafio inicial é lidar com o medo da criança em internações. Exige humanização, comunicação eficaz e gestão de internações recorrentes, evitando o estresse emocional.</p>
+                </div>
+                <!-- Card Desafio 3 -->
+                <div class="bg-gray-900 border border-gray-700 p-5 rounded-lg shadow-md transition-all duration-300 hover:border-red-600">
+                    <h4 class="font-bold text-xl text-red-600 mb-2">Capacitação Profissional</h4>
+                    <p class="text-gray-400">O PDF aponta que o tema tem pouca visibilidade na graduação, muitas vezes focada no modelo biomédico. Há uma necessidade urgente de educação continuada para a enfermagem.</p>
+                </div>
+                <!-- Card Desafio 4 -->
+                <div class="bg-gray-900 border border-gray-700 p-5 rounded-lg shadow-md transition-all duration-300 hover:border-red-600">
+                    <h4 class="font-bold text-xl text-red-600 mb-2">Fragmentação da Rede</h4>
+                    <p class="text-gray-400">A Rede de Atenção à Saúde (RAS) é descrita como (des)constituída (Lima et al., 2021), faltando articulação. Isso dificulta a transição segura do hospital para casa (desospitalização).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 4: Humanização e Cuidado Multidisciplinar (Nova) -->
+        <section id="humanizacao" class="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg">
+            <h3 class="flex items-center text-3xl font-bold text-white mb-5">
+                Humanização e a <span class="text-red-600 ml-2">Equipe Multidisciplinar</span>
+            </h3>
+            <p class="text-lg mb-6 text-gray-300">Além dos desafios técnicos, o estudo ressalta a importância vital da abordagem humana e integrada no tratamento das CRIANES.</p>
+            
+            <div class="flex flex-col md:flex-row gap-6">
+                <!-- Coluna da Esquerda: Cuidado Lúdico -->
+                <div class="md:w-1/2 bg-gray-900 border border-gray-700 p-5 rounded-lg">
+                    <h4 class="font-bold text-xl text-white mb-3">O Papel do Lúdico</h4>
+                    <p class="text-gray-400 mb-4">O artigo destaca a importância de projetos que levam o "lúdico" ao ambiente hospitalar (como o "Saúde, humanização e brincar IBMR").</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li>Reduz o medo e a ansiedade.</li>
+                        <li>Promove alívio emocional.</li>
+                        <li>Ajuda a criança a aceitar o processo.</li>
+                        <li>É uma ferramenta terapêutica essencial.</li>
+                    </ul>
+                </div>
+
+                <!-- Coluna da Direita: Equipe Multi -->
+                <div class="md:w-1/2 bg-gray-900 border border-gray-700 p-5 rounded-lg">
+                    <h4 class="font-bold text-xl text-white mb-3">Equipe Multidisciplinar</h4>
+                    <p class="text-gray-400 mb-4">O tratamento eficaz exige uma troca de saberes entre diversas áreas:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <li>Enfermagem (gestão do cuidado)</li>
+                        <li>Medicina</li>
+                        <li>Psicologia (suporte à família e criança)</li>
+                        <li>Fisioterapia</li>
+                        <li>Fonoaudiologia</li>
+                        <li>Terapia Ocupacional</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 5: Rede de Apoio e Políticas Públicas (Nova) -->
+        <section id="politicas" class="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg">
+            <h3 class="flex items-center text-3xl font-bold text-white mb-5">
+                Políticas Públicas e a <span class="text-red-600 ml-2">Rede de Apoio</span>
+            </h3>
+            <p class="text-lg mb-6 text-gray-300">O PDF enfatiza que o cuidado às CRIANES depende de uma estrutura de saúde funcional e de políticas públicas que garantam direitos.</p>
+            
+            <div>
+                <!-- Item 1: PNAISC -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h4 class="text-xl font-bold text-white mb-1">PNAISC</h4>
+                    <p class="text-gray-400">A <strong>Política Nacional de Atenção Integral à Saúde da Criança</strong> (2015) é citada como um marco, visando garantir a saúde da gestação aos 8 anos, com eixos focados no cuidado e vulnerabilidade.</p>
+                </div>
+                <!-- Item 2: ECA e SUS -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h4 class="text-xl font-bold text-white mb-1">ECA e SUS</h4>
+                    <p class="text-gray-400">O <strong>Estatuto da Criança e do Adolescente (ECA)</strong> e o <strong>SUS</strong> são fundamentais para garantir o direito igualitário à promoção, prevenção e tratamento da saúde.</p>
+                </div>
+                <!-- Item 3: Cuidado Compartilhado -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h4 class="text-xl font-bold text-white mb-1">Cuidado Compartilhado</h4>
+                    <p class="text-gray-400">O estudo aponta para um modelo de "cuidado compartilhado" entre a atenção hospitalar e a <strong>Atenção Básica</strong>, essencial para o sucesso do tratamento em casa (Home Care).</p>
+                </div>
+                <!-- Item 4: Visitas Domiciliares -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h4 class="text-xl font-bold text-white mb-1">Visitas Domiciliares</h4>
+                    <p class="text-gray-400">A visita domiciliar pela equipe de enfermagem é crucial para supervisionar o cuidado, promover a educação em saúde e monitorar o plano de tratamento, reduzindo a sobrecarga familiar.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção 6: Perguntas Frequentes (FAQ Profissional) (Atualizado) -->
+        <section id="faq" class="bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg">
+            <h3 class="text-3xl font-bold text-white mb-6 text-center">
+                Perguntas Frequentes
+            </h3>
+            <div class="space-y-4 max-w-3xl mx-auto" id="accordion-container">
+                <!-- Pergunta 1 -->
+                <div class="border border-gray-700 rounded-lg overflow-hidden">
+                    <button class="accordion-button w-full flex justify-between items-center p-5 bg-gray-700 hover:bg-gray-600 transition-colors">
+                        <span class="font-bold text-lg text-white">Qual o maior desafio na desospitalização?</span>
+                        <span class="accordion-arrow text-2xl text-red-600 transition-transform">▼</span>
+                    </button>
+                    <div class="accordion-content bg-gray-800 p-5 pt-0">
+                        <p class="text-gray-300 text-lg">Garantir que o domicílio tenha a estrutura necessária e que a família esteja tecnicamente e emocionalmente preparada. A falta de articulação da rede de saúde (RAS) torna essa transição um grande desafio.</p>
+                    </div>
+                </div>
+                <!-- Pergunta 2 -->
+                <div class="border border-gray-700 rounded-lg overflow-hidden">
+                    <button class="accordion-button w-full flex justify-between items-center p-5 bg-gray-700 hover:bg-gray-600 transition-colors">
+                        <span class="font-bold text-lg text-white">Por que a equipe multidisciplinar é tão importante?</span>
+                        <span class="accordion-arrow text-2xl text-red-600 transition-transform">▼</span>
+                    </button>
+                    <div class="accordion-content bg-gray-800 p-5 pt-0">
+                        <p class="text-gray-300 text-lg">Porque as CRIANES têm demandas complexas (físicas, cognitivas, sociais). Nenhum profissional isolado consegue atender a todas. É necessária a troca de saberes entre enfermagem, medicina, psicologia, fisioterapia e outros para um plano de cuidado integral.</p>
+                    </div>
+                </div>
+                <!-- Pergunta 3 -->
+                <div class="border border-gray-700 rounded-lg overflow-hidden">
+                    <button class="accordion-button w-full flex justify-between items-center p-5 bg-gray-700 hover:bg-gray-600 transition-colors">
+                        <span class="font-bold text-lg text-white">O que é a PNAISC?</span>
+                        <span class="accordion-arrow text-2xl text-red-600 transition-transform">▼</span>
+                    </button>
+                    <div class="accordion-content bg-gray-800 p-5 pt-0">
+                        <p class="text-gray-300 text-lg">É a Política Nacional de Atenção Integral à Saúde da Criança. O estudo a cita como um marco legal que busca fomentar a saúde integral, incluindo eixos específicos para o cuidado de crianças em situação de vulnerabilidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="text-center p-8 mt-16 text-gray-500 bg-black border-t border-gray-800">
+        <p class="text-lg">Saberes em Coneção.</p>
+        <p class="text-sm mt-1">Feito por Marcelo Hnerique, Pollyana Carvalho, Gerson Barbosa e Marinete Fonseca</p>
+    </footer>
+
+    <script>
+        // --- Lógica para o Acordeão (FAQ) ---
+        const accordionContainer = document.getElementById('accordion-container');
+        if (accordionContainer) {
+            accordionContainer.addEventListener('click', function(e) {
+                const button = e.target.closest('.accordion-button');
+                if (!button) return;
+
+                const content = button.nextElementSibling;
+                
+                // Fecha todos os outros abertos
+                const allButtons = accordionContainer.querySelectorAll('.accordion-button');
+                allButtons.forEach(btn => {
+                    if (btn !== button) {
+                        btn.classList.remove('open');
+                        btn.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+
+                // Abre ou fecha o clicado
+                button.classList.toggle('open');
+                if (button.classList.contains('open')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
